@@ -1,4 +1,5 @@
 <x-logout-layout>
+<!--登録完了画面-->
   <div id="clear">
     <p>〇〇さん</p>
     <p>ようこそ！AtlasSNSへ！</p>
