@@ -22,6 +22,9 @@ require __DIR__ . '/auth.php';
 
 Route::get('top', [PostsController::class, 'index']);
 
+//投稿
+Route::post('/post/create', [PostsController::class, 'postCreate'])->name("create");
+
 Route::get('profile', [ProfileController::class, 'profile']);
 
 Route::get('search', [UsersController::class, 'index']);

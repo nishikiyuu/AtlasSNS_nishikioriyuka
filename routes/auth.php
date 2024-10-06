@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
+
 Route::middleware('guest')->group(function () {
 
     Route::get('login', [AuthenticatedSessionController::class, 'create']);
@@ -18,3 +19,11 @@ Route::middleware('guest')->group(function () {
     Route::post('added', [RegisteredUserController::class, 'added']);
 
 });
+
+//ユーザー登録表示
+// Route::get('/register/create',function() {
+//     return view('create');
+// });
+
+// //ユーザー登録
+// Route::get('/register/create', [RegisteredUserController::class, 'create']);

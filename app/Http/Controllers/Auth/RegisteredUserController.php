@@ -20,6 +20,7 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
+        $user = User::get();
         return view('auth.register');
     }
 
