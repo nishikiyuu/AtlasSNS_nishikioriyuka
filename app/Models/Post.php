@@ -9,7 +9,12 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $fillabel = [
+    protected $fillable =
+    [
+        'user_id',
         'post'
     ];
+     public function user(){
+       return $this->belongsTo('App/Models/User');
+    }
 }

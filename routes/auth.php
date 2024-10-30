@@ -11,7 +11,6 @@ Route::middleware('guest')->group(function () {
 
     Route::get('login', [AuthenticatedSessionController::class, 'create']);
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
-
     Route::get('register', [RegisteredUserController::class, 'create']);
     Route::post('register', [RegisteredUserController::class, 'store']);
 
@@ -25,5 +24,5 @@ Route::middleware('guest')->group(function () {
 //     return view('create');
 // });
 
-// //ユーザー登録
+// ユーザー登録
 // Route::get('/register/create', [RegisteredUserController::class, 'create']);

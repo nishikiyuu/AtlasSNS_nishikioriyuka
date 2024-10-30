@@ -1,14 +1,9 @@
-<x-login-layout>
-
-{!! Form::open(['url' => '/post/create','method'=>'GET']) !!}
- {{ Form::text('post',null,['class' => 'input']) }}
- {{ Form::submit('登録') }}
+<div>
+{!! Form::open(['url' => '/post/create']) !!}
+{{ Form::text('post',null,['class' => 'input']) }}
+{{ Form::submit('登録') }}
 {!! Form::close() !!}
-<form action="{{route("create")}}" method="POST">
-  @csrf
-  <input type="text" name="post">
-  <input type="submit">
-</form>
+
 
 <!--投稿表示-->
 <div>
