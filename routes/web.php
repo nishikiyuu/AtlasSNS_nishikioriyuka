@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\PostsController;
+use App\Http\Controllers\FollowsController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,14 +25,19 @@ require __DIR__ . '/auth.php';
 Route::get('top', [PostsController::class, 'index']);
 
 //投稿
-Route::post('post/create', [PostsController::class, 'postCreate']);
+Route::post('/post/create', [PostsController::class, 'postCreate']);
 
-Route::get('profile', [ProfileController::class, 'profile']);
+Route::get('profile', [ProfileController::class, 'profile'])
+                ->name('profile');
 
-Route::get('search', [UsersController::class, 'index']);
+Route::get('/search', [UsersController::class, 'search'])
+                ->name('search');
+//class:index
 
-Route::get('follow-list', [PostsController::class, 'index']);
-Route::get('follower-list', [PostsController::class, 'index']);
+Route::get('/follow-list', [FollowsController::class, 'FollowsController'])
+                ->name('follow-list');
+Route::get('/follower-list', [FollowsController::class, 'followerList'])
+                ->name('follower-list');
 
 //logout
     Route::get('logout', [AuthenticatedSessionController::class, 'logout'])
