@@ -20,9 +20,10 @@ Route::middleware('guest')->group(function () {
 });
 
 //ユーザー登録表示
-// Route::get('/register/create',function() {
-//     return view('create');
-// });
+//Route::get('/register',function {
+   // session()->put('username');
+    //return session()->get('username')
+ //});
 
 // ユーザー登録
 // Route::get('/register/create', [RegisteredUserController::class, 'create']);

@@ -14,6 +14,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Scripts -->
+
   <!--サイトのアイコン指定-->
   <link rel="icon" href="画像URL" sizes="16x16" type="image/png" />
   <link rel="icon" href="画像URL" sizes="32x32" type="image/png" />
@@ -35,19 +36,19 @@
     </div>
     <div id="side-bar">
       <div id="confirm">
-        <p>〇〇さんの</p>
+        <p>{{ Auth::user()->username }}さんの</p>
         <div>
           <p>フォロー数</p>
           <p>〇〇名</p>
         </div>
-        <p class="btn-link"><a href="{{route('follow-list')}}">フォローリスト</a></p>
+        <div class="btn btn-primary"><a href="{{route('follow-list')}}">フォローリスト</a></div>
         <div>
           <p>フォロワー数</p>
           <p>〇〇名</p>
         </div>
-        <p class="btn-link"><a href={{route("follower-list")}}>フォロワーリスト</a></p>
+        <p class="btn btn-primary"><a href={{route("follower-list")}}>フォロワーリスト</a></p>
       </div>
-      <p class="btn-link"><a href="{{route('search')}}">ユーザー検索</a></p>
+      <p class="btn btn-primary"><a href="{{route('search')}}">ユーザー検索</a></p>
     </div>
   </div>
   <footer>
@@ -55,6 +56,8 @@
   <script src="{{ asset('js/app.js') }}"></script>
   <script src="JavaScriptファイルのURL"></script>
   <script src="JavaScriptファイルのURL"></script>
+  <script src="{{ asset('js/script.js')}}"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 
 </html>

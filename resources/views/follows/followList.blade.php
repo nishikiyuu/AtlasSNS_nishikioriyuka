@@ -1,7 +1,17 @@
 <x-login-layout>
+{!! Form::open(['url' => '/follow-list']) !!}
+<h2>フォローリスト</h2>
 
-
-  <h2>機能を実装していきましょう。</h2>
-{!! Form::open(['url' => '/followlist']) !!}
 {!! Form::close() !!}
+<!--
+ @foreach($posts as $post)
+    <tr>
+      <td>{{$post->user_id}}</td>
+      <td><img src="{{asset('/images/'.$post->user->icon_image)}}"></td>
+      <td>{{$post->user->username}}</td>
+      <td>{{$post->post}}</td>
+      <td>{{$post->created_at}}</td>
+  @endforeach
+-->
+
 </x-login-layout>

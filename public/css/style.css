@@ -9,6 +9,20 @@ header {
     background: #186AC9;
 }
 
+#head {
+    height: 90px;
+}
+
+h1 {
+    width: 150px;
+    margin: 0;
+}
+
+#head img {
+    width: 150px;
+    height: 50px;
+}
+
 /* main content */
 #row {
     display: flex;
@@ -24,23 +38,207 @@ header {
     border-left: 1px solid #727272;
 }
 
-/* top */
-li {
-    list-style: none;
-    border-bottom: 1px solid #000;
-    display: flex;
-}
 
+/* top (投稿)*/
 .post-content {
     width: 100%;
-    padding: 15px;
+    height: 175px;
+    display: flex;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1rem solid;
+    border-bottom-color: lightgray;
+    justify-content: space-between;
+
 }
 
-.post-content>div {
+/*テキストエリア*/
+.text-post {
+    width: 100%;
+    height: 100%;
+}
+
+.form-control {
+    resize: none;
+    width: 450px;
+    height: 140px;
+    padding-top: 30px;
+    font-size: 16px;
+    border: none;
+    background-color: transparent;
+}
+
+/*投稿送信ボタン*/
+.btn-post {
+    margin-top: 100px;
+    margin-right: 150px;
+}
+
+.btn-post input {
+    width: 45px;
+    height: 45px;
+}
+
+/*投稿者(ログイン者)アイコン*/
+.icon-post {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.icon-post img {
+    width: 45px;
+    height: 45px;
+}
+
+/* post block(投稿内容)*/
+.post-block {
+    list-style: none;
+    border-bottom: 1px solid #000;
+    flex-direction: column;
+}
+
+.figure {
+    width: 70px;
+    height: auto;
+}
+
+.post-block img {
+    width: 50px;
+    height: 50px;
+    margin-left: 150px;
+}
+
+.post-detail {
     display: flex;
-    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+}
+
+.post-group {
+    margin-left: 10px;
 }
 
 .post-name {
+    font-weight: bold;
     margin-bottom: 10px;
+}
+
+.post-time {
+    margin-left: 470px;
+}
+
+.btn-detail {
+    height: 60px;
+    display: flex;
+    margin-left: 600px;
+}
+
+/*投稿編集ボタン*/
+.js-modal-open img {
+    width: 50px;
+    height: 50px;
+}
+
+/*投稿削除ボタン*/
+.btn-delete input {
+    width: 50px;
+    height: 50px;
+}
+
+/* modal */
+.content {
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.modal {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.modal__bg {
+    background: rgba(0, 0, 0, 0.8);
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+}
+
+.modal__content {
+    background: #fff;
+    left: 50%;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+/* accordion */
+.accordion {
+    margin-left: auto;
+    margin-top: 10px;
+    max-width: 250px;
+    position: relative;
+    width: 100%;
+}
+
+.accordion-title {
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 8px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.accordion-title::after {
+    border-right: solid 2px #fff;
+    border-top: solid 2px #fff;
+    content: "";
+    display: block;
+    height: 8px;
+    position: absolute;
+    right: 25px;
+    top: 38%;
+    transform: scale(1, 1) rotate(-225deg);
+    width: 8px;
+}
+
+.accordion-title.open::after {
+    top: 45%;
+    transform: scale(-1) rotate(135deg);
+}
+
+.accordion-content {
+    display: none;
+    background-color: #fff;
+    border-bottom: 2px solid #636b6f;
+    border-left: 2px solid #636b6f;
+    border-right: 2px solid #636b6f;
+}
+
+.accordion-content ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 1px;
+}
+
+.accordion-content a {
+    color: grey;
+}
+
+/*search*/
+.search input {
+    padding: 15% 35%;
+}
+
+.btn-search input {
+    width: 50px;
+    height: 50px;
 }

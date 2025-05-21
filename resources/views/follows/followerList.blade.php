@@ -1,7 +1,5 @@
 <x-login-layout>
-
-
-  <h2>機能を実装していきましょう。</h2>
-{!! Form::open(['url' => '/followerlist']) !!}
+{!! Form::open(['url' => '/follower-list']) !!}
+<h2>フォロワーリスト</h2>
 {!! Form::close() !!}
 </x-login-layout>

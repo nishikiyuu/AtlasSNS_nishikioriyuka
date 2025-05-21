@@ -21,6 +21,7 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'icon_image'
     ];
 
     /**
@@ -33,7 +34,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-   public function post(){
-        return $this->hasMany('App/Models/Post');
+    public function post(){
+        return $this->hasMany(Post::class);
+    }
+
+    public function follow(){
+        return $this->belongsToMany(Follow::class);
     }
 }

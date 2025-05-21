@@ -1,11 +1,11 @@
 <x-login-layout>
 {!! Form::open(['url' => '/profiles']) !!}
 
-{{ Form::label('ユーザー名') }}
-{{ Form::text('username',null,['class' => 'input']) }}
+{{ Form::label('ユーザー名' ) }}
+{{ Form::text('username',$user->username,null,['class' => 'input']) }}
 
 {{ Form::label('メールアドレス') }}
-{{ Form::email('email',null,['class' => 'input'])}}
+{{ Form::email('email',$user->email,null,['class' => 'input'])}}
 
 {{ Form::label('パスワード') }}
 {{ Form::password('password',['class' => 'input']) }}
@@ -14,7 +14,7 @@
 {{ Form::password('password-confirmation',['class' => 'input']) }}
 
 {{ Form::label('自己紹介') }}
-{{ Form::text('bio',null,['class' => 'input']) }}
+{{ Form::text('bio',$user->bio,null,['class' => 'input']) }}
 
 {{ Form::label('アイコン画像') }}
 {{ Form::file('image',null,['class' => 'input']) }}
