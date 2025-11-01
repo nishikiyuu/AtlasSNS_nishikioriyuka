@@ -10,7 +10,11 @@ header {
 }
 
 #head {
-    height: 90px;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 h1 {
@@ -18,10 +22,15 @@ h1 {
     margin: 0;
 }
 
-#head img {
+.atlas-icon img {
     width: 150px;
     height: 50px;
 }
+
+
+/*login*/
+
+
 
 /* main content */
 #row {
@@ -38,6 +47,92 @@ h1 {
     border-left: 1px solid #727272;
 }
 
+/* accordion */
+.accordion {
+    display: flex;
+    margin-left: auto;
+    margin: 0 0 0 auto;
+    height: 100%;
+}
+
+.accordion-container {
+    width: 230px;
+    height: 100%;
+}
+
+.accordion-title {
+    height: 100%;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 12%;
+    position: relative;
+    ;
+}
+
+.accordion-title::after {
+    border-right: solid 2px #fff;
+    border-top: solid 2px #fff;
+    content: "";
+    display: block;
+    height: 15px;
+    position: absolute;
+    right: 25px;
+    top: 35%;
+    transform: scale(1, 1) rotate(-225deg);
+    width: 15px;
+}
+
+.accordion-title.open::after {
+    top: 45%;
+    transform: scale(-1) rotate(135deg);
+}
+
+.accordion-content {
+    display: none;
+    position: absolute;
+    width: 305px;
+    height: 240px;
+    background-color: #fff;
+    border-top: 2px solid #001f5b;
+    border-bottom: 2px solid #001f5b;
+    border-left: 2px solid #001f5b;
+    border-right: 2px solid #001f5b;
+}
+
+.accordion-content>ul {
+    text-align: center;
+}
+
+.accordion-content li {
+    padding: 20px 0;
+    border-bottom: 1px solid #000;
+}
+
+.accordion-content li:hover {
+    background-color: #001f5b;
+}
+
+.accordion-content a {
+    width: 100%;
+    height: 100%;
+    font-size: x-large;
+    color: grey;
+}
+
+.accordion-content a:hover {
+    color: #fff;
+}
+
+.icon-top {
+    padding: 5%;
+}
+
+/*accordion横のicon*/
+.icon-top img {
+    width: 50px;
+    height: 50px;
+}
 
 /* top (投稿)*/
 .post-content {
@@ -94,6 +189,9 @@ h1 {
 /* post block(投稿内容)*/
 .post-block {
     list-style: none;
+    padding-top: 15px;
+    padding-right: 20px;
+    padding-left: 150px;
     border-bottom: 1px solid #000;
     flex-direction: column;
 }
@@ -106,17 +204,16 @@ h1 {
 .post-block img {
     width: 50px;
     height: 50px;
-    margin-left: 150px;
 }
 
 .post-detail {
     display: flex;
     width: 100%;
     height: auto;
-    margin-top: 15px;
 }
 
 .post-group {
+    width: 500px;
     margin-left: 10px;
 }
 
@@ -125,14 +222,21 @@ h1 {
     margin-bottom: 10px;
 }
 
-.post-time {
-    margin-left: 470px;
+.post-word {
+    overflow-wrap: break-word;
 }
 
+/*投稿時間の表示位置*/
+.post-time {
+    margin: 0 0 0 auto;
+}
+
+/*編集・削除ボタンの親要素*/
 .btn-detail {
-    height: 60px;
     display: flex;
-    margin-left: 600px;
+    width: 100%;
+    height: 60px;
+    justify-content: right;
 }
 
 /*投稿編集ボタン*/
@@ -178,61 +282,6 @@ h1 {
     width: 60%;
 }
 
-/* accordion */
-.accordion {
-    margin-left: auto;
-    margin-top: 10px;
-    max-width: 250px;
-    position: relative;
-    width: 100%;
-}
-
-.accordion-title {
-    color: #fff;
-    cursor: pointer;
-    font-size: 20px;
-    margin: 8px;
-    padding: 0 20px;
-    position: relative;
-}
-
-.accordion-title::after {
-    border-right: solid 2px #fff;
-    border-top: solid 2px #fff;
-    content: "";
-    display: block;
-    height: 8px;
-    position: absolute;
-    right: 25px;
-    top: 38%;
-    transform: scale(1, 1) rotate(-225deg);
-    width: 8px;
-}
-
-.accordion-title.open::after {
-    top: 45%;
-    transform: scale(-1) rotate(135deg);
-}
-
-.accordion-content {
-    display: none;
-    background-color: #fff;
-    border-bottom: 2px solid #636b6f;
-    border-left: 2px solid #636b6f;
-    border-right: 2px solid #636b6f;
-}
-
-.accordion-content ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    margin-bottom: 1px;
-}
-
-.accordion-content a {
-    color: grey;
-}
-
 /*search*/
 .search input {
     padding: 15% 35%;
@@ -241,4 +290,79 @@ h1 {
 .btn-search input {
     width: 50px;
     height: 50px;
+}
+
+/*profile*/
+.profile-container {
+    display: flex;
+    width: 100%;
+}
+
+.icon-profile {
+    width: 50px;
+    height: auto;
+    padding-top: 5%;
+    margin-left: 20%;
+}
+
+.icon-profile img {
+    width: 50px;
+    height: 50px;
+}
+
+.profile-content {
+    width: 100%;
+    height: auto;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+.profile-content label:not(.icon-label) {
+    width: 30%;
+    padding-bottom: 5%;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.profile-content input {
+    width: 300px;
+    height: 35px;
+    border: solid 2px #808080;
+}
+
+.profile-file {
+    display: flex;
+}
+
+.icon-label {
+    width: 300px;
+    height: 80px;
+    color: #fff;
+    background-color: lightgray;
+    border: solid 2px #808080;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.icon-label input {
+    font-size: small;
+}
+
+.icon-label p {
+    width: 50%;
+    color: #d3d3d3;
+    background-color: #f5f5f5;
+    font-size: large;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.btn-danger {
+    width: 150px;
+    margin-top: 30px;
+    margin-left: 170px;
 }

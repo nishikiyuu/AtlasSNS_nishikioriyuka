@@ -32,3 +32,11 @@ $(function () {
     $(this).toggleClass("open", 200);
   });
 });
+
+//input
+$(function () {
+  $('input[name="icon-image"]').on('change', function () {
+    var file = $(this).prop('files')[0];
+    $('.icon-file').text(file.name);
+  });
+});
