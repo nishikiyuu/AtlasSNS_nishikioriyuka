@@ -30,21 +30,27 @@ class ProfileController extends Controller
         $up_password = $request->input('password');
         $up_bio = $request->input('bio');
 
+        $up_icon = null;
+       if($request->hasFile('icon-image')) {
+         $up_icon = $request->file('icon-image')->store('public/images/');
+        }
 
-        $icon_image = $request->file('icon-image');
-        dd($icon_image);
-        // ->store('public/images/');
+
 
         User::where('id', $id)->update([
             'username' => $up_username,
             'email' => $up_email,
             'password' => Hash::make($up_password),
             'bio' => $up_bio,
-            'icon-image' => $icon_image
+            'icon_image' => $up_icon ?basename($up_icon):User::find($id)->icon_image
         ]);
 
 
 
-        return redirect()->route('/top');
+        return redirect()->route('top');
+    }
+    public function __construct()
+    {
+       $this->middleware('auth');
     }
 }

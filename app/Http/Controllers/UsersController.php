@@ -14,4 +14,8 @@ class UsersController extends Controller
       //  $users = User::all();
         //return view('users.search',//compact('users'));
     //}
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
 }

@@ -55,4 +55,9 @@ class PostsController extends Controller
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
 }

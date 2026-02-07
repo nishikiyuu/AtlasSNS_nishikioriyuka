@@ -13,4 +13,8 @@ class FollowsController extends Controller
     public function followerList(){
         return view('follows.followerList');
     }
+    public function __construct()
+    {
+       $this->middleware('auth');
+    }
 }

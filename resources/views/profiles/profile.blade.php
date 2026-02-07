@@ -2,7 +2,7 @@
   {!! Form::open(['url' => '/updateProfile', 'files' => true]) !!}
 <div class="profile-container">
   <div class="icon-profile">
-      <img src="{{asset('/images/'.Auth::user()->icon_image)}}">
+      <img src="{{asset('storage/images/'.Auth::user()->icon_image)}}">
   </div>
   <div class="profile-content">
     <div>

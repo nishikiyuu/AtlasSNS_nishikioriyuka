@@ -3,7 +3,7 @@
 {!! Form::open(['url' => '/post/create']) !!}
 <div class="post-content">
   <div class="icon-post">
-      <img src="{{asset('/images/'.Auth::user()->icon_image)}}">
+      <img src="{{asset('storage/images/'.Auth::user()->icon_image)}}">
   </div>
   <div class="text-post">
   {{ Form::textarea('post',null,['class' => 'form-control', 'placeholder' => '投稿内容を入力してください', 'rows' => '5']) }}
@@ -22,7 +22,7 @@
   <ul>
     <li class="post-block">
       <div class="post-detail">
-        <figure><img src="{{asset('/images/'.$post->user->icon_image)}}"></figure>
+        <figure><img src="{{asset('storage/images/'.$post->user->icon_image)}}"></figure>
         <div class="post-group">
           <div class="post-name">{{$post->user->username}}</div>
           <div class="post-word">{{$post->post}}</div>

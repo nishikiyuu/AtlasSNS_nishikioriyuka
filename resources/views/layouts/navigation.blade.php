@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="icon-top">
-                    <img src="{{asset('/images/'.Auth::user()->icon_image)}}">
+                    <img src="{{asset('storage/images/'.Auth::user()->icon_image)}}">
                 </div>
             </div>
         </div>

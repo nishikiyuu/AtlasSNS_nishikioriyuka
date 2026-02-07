@@ -24,7 +24,8 @@ require __DIR__ . '/auth.php';
 
 
 Route::middleware(['web'])->group(function () {
-    Route::get('/top', [PostsController::class, 'index']);
+    Route::get('/top', [PostsController::class, 'index'])
+    ->name('top');
     //投稿
     Route::post('/post/create', [PostsController::class, 'postCreate']);
     //編集

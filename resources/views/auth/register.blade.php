@@ -18,7 +18,7 @@
         {{ Form::label('パスワード確認') }}
         {{ Form::text('password_confirmation',null,['class' => 'input']) }}
 
-        {{ Form::submit('登録') }}
+        <button class="btn btn-danger">登録</button>
 
         @if($errors->any())
         <div class="alert alert-danger">
