@@ -39,7 +39,53 @@ h1 {
 
 #side-bar {
     flex: 0 0 19%;
-    border-left: 1px solid #727272;
+    border-left: 2px solid #727272;
+    width: 20%;
+    float: right;
+    height: 100vh;
+}
+
+.side-search {
+    border-top: 2px solid #D3D3D3;
+    padding: 20%
+}
+
+.side-search button {
+    width: 150px;
+    font-size: medium;
+}
+
+.follow-count {
+    display: flex;
+}
+
+.btn-follow {
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: 10%;
+}
+
+.btn-follow button {
+    width: 130px;
+    font-size: small;
+}
+
+.follower-count {
+    display: flex;
+}
+
+.btn-follower {
+    width: 100%;
+    text-align: right;
+    padding-right: 10px;
+    margin-bottom: 10%;
+}
+
+.btn-follower button {
+    width: 130px;
+    font-size: small;
+
 }
 
 /* accordion */
@@ -88,11 +134,11 @@ h1 {
     position: absolute;
     width: 305px;
     height: 240px;
-    background-color: #fff;
     border-top: 2px solid #001f5b;
     border-bottom: 2px solid #001f5b;
     border-left: 2px solid #001f5b;
     border-right: 2px solid #001f5b;
+    background-color: #fff;
 }
 
 .accordion-content>ul {
@@ -127,6 +173,7 @@ h1 {
 .icon-top img {
     width: 50px;
     height: 50px;
+    border-radius: 90px;
 }
 
 /* top (投稿)*/
@@ -179,26 +226,23 @@ h1 {
 .icon-post img {
     width: 45px;
     height: 45px;
+    border-radius: 90px;
 }
 
 /* post block(投稿内容)*/
 .post-block {
     list-style: none;
     padding-top: 15px;
-    padding-right: 20px;
-    padding-left: 150px;
+    padding-right: 10%;
+    padding-left: 15%;
     border-bottom: 1px solid #000;
     flex-direction: column;
-}
-
-.figure {
-    width: 70px;
-    height: auto;
 }
 
 .post-block img {
     width: 50px;
     height: 50px;
+    border-radius: 90px;
 }
 
 .post-detail {
@@ -278,13 +322,56 @@ h1 {
 }
 
 /*search*/
+.search-content {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    border-bottom: 1rem solid;
+    border-bottom-color: lightgray;
+}
+
+.search {
+    margin-left: 5%;
+    align-content: center;
+}
+
 .search input {
-    padding: 15% 35%;
+    width: 330px;
+    height: 45px;
+    font-size: medium;
+}
+
+.btn-search {
+    margin-left: 2%;
+    align-content: center;
 }
 
 .btn-search input {
+    width: 45px;
+    height: 45px;
+}
+
+.search-result {
+    width: 100%;
+    margin-top: 15%;
+
+}
+
+.search-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-group img {
     width: 50px;
     height: 50px;
+    border-radius: 90px;
+}
+
+.search-user {
+    font-size: large;
+    writing-mode: horizontal-tb;
+
 }
 
 /*profile*/
@@ -356,8 +443,14 @@ input[type="file"] {
     display: none;
 }
 
-.btn-danger {
-    width: 150px;
-    margin-top: 30px;
-    margin-left: 170px;
+.btn-update {
+    width: auto;
+    height: 20%;
+    padding-top: 10%;
+    padding-left: 15%;
+
+}
+
+.btn-update button {
+    width: 130px;
 }

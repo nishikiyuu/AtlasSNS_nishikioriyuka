@@ -4,6 +4,10 @@
   <div class="icon-profile">
       <img src="{{asset('storage/images/'.Auth::user()->icon_image)}}">
   </div>
+  @foreach ($errors->all() as $error)
+  <li>{{ $error }}</li>
+  @endforeach
+
   <div class="profile-content">
     <div>
       {{ Form::label('ユーザー名' ) }}
@@ -19,7 +23,7 @@
     </div>
     <div>
       {{ Form::label('パスワード確認') }}
-      {{ Form::password('password-confirmation',['class' => 'input']) }}
+      {{ Form::password('password_confirmation',['class' => 'input']) }}
     </div>
     <div>
       {{ Form::label('自己紹介') }}
@@ -34,8 +38,9 @@
         {{ csrf_field() }}
       </label>
     </div>
-
-    <button class="btn btn-danger">更新</button>
+    <div class="btn-update">
+      <button class="btn btn-danger">更新</button>
+    </div>
   </div>
 </div>
   {!! Form::close() !!}

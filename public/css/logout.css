@@ -62,9 +62,11 @@ input {
     border-radius: 10px;
     border-width: thin;
     border-color: lightgray;
+    color: black;
 
 }
 
+/* ログインボタン */
 .login-btn {
     width: auto;
     margin-bottom: 30px;

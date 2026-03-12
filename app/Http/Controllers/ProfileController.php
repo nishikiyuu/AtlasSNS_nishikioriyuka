@@ -24,6 +24,15 @@ class ProfileController extends Controller
 
     public function updateProfile(Request $request)
     {
+        $request->validate([
+            'username' => 'required|min: 2|max: 12',
+            'email' => 'required|min: 5|max: 40|email|unique:users,email,' .Auth::id().',id',
+            'password' => 'required|alpha_num|min: 8|max: 20|confirmed',
+            'password_confirmation' => 'required|alpha_num|min: 8|max: 20',
+            'bio' => 'max: 150',
+            'icon-image' => 'mimes:jpg,png,bmp,gif,svg',
+        ]);
+
         $id = Auth::id();
         $up_username = $request->input('username');
         $up_email = $request->input('email');

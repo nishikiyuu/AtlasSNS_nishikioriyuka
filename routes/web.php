@@ -43,11 +43,13 @@ Route::middleware(['web'])->group(function () {
 
     //検索
     Route::get('/search', [UsersController::class, 'search'])
-    ->name('search');
+    ->name('search');;
+
     //class:index
     //フォロー
     Route::get('/follow-list', [FollowsController::class, 'FollowsController'])
     ->name('follow-list');
+
     //フォロワー
     Route::get('/follower-list', [FollowsController::class, 'followerList'])
     ->name('follower-list');
