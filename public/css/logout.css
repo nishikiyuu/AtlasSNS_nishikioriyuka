@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
 html {
-    height: 100%;
+    height: 100vh;
 }
 
 body {
     height: 100%;
     background: #186AC9;
-    background-image: linear-gradient(0deg, #FFD400 30%, #186AC9 70%);
+    background-image: linear-gradient(0deg, #FFD400 40%, #186AC9 60%);
 }
 
 
@@ -30,7 +30,7 @@ body {
 }
 
 #container {
-    height: 30%;
+    height: max-content;
 }
 
 .login-content {
