@@ -42,6 +42,7 @@ h1 {
     flex: 0 0 19%;
     border-left: 2px solid #727272;
     width: 20%;
+    padding-top: 10px;
     float: right;
 }
 
@@ -312,13 +313,31 @@ h1 {
 }
 
 .modal__content {
+    width: 55%;
+    height: 300px;
     background: #fff;
     left: 50%;
-    padding: 40px;
+    padding: 30px;
     position: absolute;
     top: 50%;
+    border-radius: 10px;
     transform: translate(-50%, -50%);
-    width: 60%;
+}
+
+.modal__content form {}
+
+.text-modal textarea {
+    width: 100%;
+    height: 190px;
+}
+
+.btn-modal {
+    text-align: center;
+}
+
+.btn-modal input {
+    width: 50px;
+    height: 50px;
 }
 
 /*search*/
@@ -351,16 +370,27 @@ h1 {
     height: 45px;
 }
 
+.search-word {
+    width: 30%;
+    padding-top: 50px;
+    margin-left: 20%;
+}
+
+.search-word p {
+    font-size: 23px;
+}
+
 .search-result {
     width: 100%;
-    margin-top: 15%;
+    margin-top: 30px;
+    padding-left: 30%;
+    padding-right: 30%;
 
 }
 
 .search-group {
     display: flex;
     justify-content: space-between;
-    padding-right: 50%;
     margin-bottom: 35px;
     align-items: center;
 }
@@ -372,7 +402,7 @@ h1 {
 }
 
 .search-user {
-    width: 175px;
+    width: 250px;
     font-size: large;
     writing-mode: horizontal-tb;
 }
@@ -393,6 +423,7 @@ h1 {
 .icon-profile img {
     width: 50px;
     height: 50px;
+    border-radius: 90px;
 }
 
 .profile-content {

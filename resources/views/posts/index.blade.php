@@ -49,12 +49,16 @@
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
            <form action="/update" method="post">
+              <div class="text-modal">
                 <textarea name="up_post" class="modal_post"></textarea>
+              </div>
                 <input type="hidden" name="id" class="modal_id" value="">
-                <input type="submit" value="更新">
+              <div class="btn-modal">
+                <input type="image" src="{{asset('./images/edit.png')}}">
+              </div>
                 {{ csrf_field() }}
            </form>
-           <a class="js-modal-close" href="">閉じる</a>
+           <a class="js-modal-close" href=""></a>
         </div>
     </div>
 </x-login-layout>

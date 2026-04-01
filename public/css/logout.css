@@ -1,11 +1,9 @@
 @charset "UTF-8";
 
-html {
-    height: 100vh;
-}
+html {}
 
 body {
-    height: 100%;
+    height: 100vh;
     background: #186AC9;
     background-image: linear-gradient(0deg, #FFD400 40%, #186AC9 60%);
 }
@@ -27,10 +25,6 @@ body {
     text-align: center;
     font-weight: 900;
     color: #fff;
-}
-
-#container {
-    height: max-content;
 }
 
 .login-content {
