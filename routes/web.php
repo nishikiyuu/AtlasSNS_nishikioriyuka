@@ -43,7 +43,10 @@ Route::middleware(['web'])->group(function () {
 
     //検索
     Route::get('/search', [UsersController::class, 'search'])
-    ->name('search');;
+    ->name('search');
+
+    Route::post('/search/follow', [UsersController::class, 'follow'])
+    ->name('follow');
 
     //class:index
     //フォロー

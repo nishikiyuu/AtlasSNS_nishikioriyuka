@@ -27,7 +27,10 @@
         <div class="search-user">
           <div>{{ $user->username }}</div>
         </div>
-        <button class="btn btn-info">フォローする</button>
+        @if()
+        @else
+        <button type="submit" class="btn btn-info">フォローする</button>
+        @endif
       </div>
     @endforeach
   </div>

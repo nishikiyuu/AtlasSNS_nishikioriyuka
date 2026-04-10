@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Authenticatable
 {
@@ -40,7 +41,32 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    public function follow(){
-        return $this->belongsToMany(Follow::class);
+    public function follows()
+    {
+        return $this->belongsToMany(User::class,'following_id','followed_id')->withTimestamps();
+    }
+
+    public function relation(){
+        $id = $this->id;
+        $follow = $this->follows()->where('following_id', $id)->first();
+        $follower = $this->follows()->where('followed_id', Auth::user()->id)->first();
+
+        if(!($follow) && !($follower)){
+            $result = 0;
+        }elseif($follow && !($follower)){
+            $result = 1;
+        }elseif(!($follow) && $follower){
+            $result = 2;
+        }else{
+            $result = 3;
+        }
+
+        //0->どちらもフォローしていない
+        //1->相手をフォロー
+        //2->フォローされている
+        //3->相互フォロー
+
+        return $result;
+
     }
 }

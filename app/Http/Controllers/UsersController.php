@@ -19,6 +19,10 @@ class UsersController extends Controller
         return view('users.search',compact('users','keyword'));
     }
 
+    public function follow(Request $request){
+
+    }
+
     public function user(){
         return $this->hasMany(User::class);
     }
