@@ -43,7 +43,7 @@ class User extends Authenticatable
 
     public function follows()
     {
-        return $this->belongsToMany(User::class,'following_id','followed_id')->withTimestamps();
+        return $this->belongsToMany(User::class,'follows','id','following_id','followed_id')->withTimestamps();
     }
 
     public function relation(){
@@ -67,6 +67,13 @@ class User extends Authenticatable
         //3->相互フォロー
 
         return $result;
+        dd($result);
+    }
 
+    public function isFollow(){
+        $id = $this->id;
+        $isFollow = Auth::user()->follows()->where('following_id', $id)->first();
+        //ログインユーザーが対象ユーザーをフォローしているか
+        return $isFollow;
     }
 }

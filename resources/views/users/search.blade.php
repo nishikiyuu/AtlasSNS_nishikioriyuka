@@ -27,9 +27,13 @@
         <div class="search-user">
           <div>{{ $user->username }}</div>
         </div>
-        @if()
+        @csrf
+         <input name="following_id" type="hidden" value="{{ $user->id }}">
+
+        @if($user->isFollow())
+          <button type="submit" class="btn btn-info">フォロー解除</button>
         @else
-        <button type="submit" class="btn btn-info">フォローする</button>
+          <button type="submit" class="btn btn-info">フォローする</button>
         @endif
       </div>
     @endforeach

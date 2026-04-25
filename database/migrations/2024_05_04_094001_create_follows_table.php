@@ -15,8 +15,8 @@ class CreateFollowsTable extends Migration
     {
         Schema::create('follows', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('following_id');
-            $table->unsignedBigInteger('followed_id');
+            $table->unsignedBigInteger('following_id');//フォローしているユーザー
+            $table->unsignedBigInteger('followed_id');//フォローされているユーザー
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->default(DB::raw('current_timestamp on update current_timestamp'));
 
