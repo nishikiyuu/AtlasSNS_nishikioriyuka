@@ -37,27 +37,34 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    public function post(){
+    public function post()
+    {
         return $this->hasMany(Post::class);
     }
 
-    public function follows()
+    public function following()
     {
-        return $this->belongsToMany(User::class,'follows','id','following_id','followed_id')->withTimestamps();
+        return $this->belongsToMany(User::class, 'follows', 'following_id', 'followed_id')->withTimestamps();
     }
 
-    public function relation(){
+    public function followed()
+    {
+        return $this->belongsToMany(User::class, 'follows', 'followed_id', 'following_id')->withTimestamps();
+    }
+
+    public function relation()
+    {
         $id = $this->id;
         $follow = $this->follows()->where('following_id', $id)->first();
         $follower = $this->follows()->where('followed_id', Auth::user()->id)->first();
 
-        if(!($follow) && !($follower)){
+        if (!($follow) && !($follower)) {
             $result = 0;
-        }elseif($follow && !($follower)){
+        } elseif ($follow && !($follower)) {
             $result = 1;
-        }elseif(!($follow) && $follower){
+        } elseif (!($follow) && $follower) {
             $result = 2;
-        }else{
+        } else {
             $result = 3;
         }
 
@@ -65,15 +72,25 @@ class User extends Authenticatable
         //1->相手をフォロー
         //2->フォローされている
         //3->相互フォロー
-
         return $result;
-        dd($result);
     }
 
-    public function isFollow(){
+    public function isFollow()
+    {
         $id = $this->id;
-        $isFollow = Auth::user()->follows()->where('following_id', $id)->first();
+        return (bool) Auth::user()->following()->where('following_id', $id)->first(['follows.id']);
+
         //ログインユーザーが対象ユーザーをフォローしているか
-        return $isFollow;
     }
+
+    public function follow(int $user_id)
+    {
+        return $this->following()->attach($user_id);
+    }
+
+    public function unfollow(int $user_id)
+    {
+        return $this->following()->detach($user_id);
+    }
+
 }

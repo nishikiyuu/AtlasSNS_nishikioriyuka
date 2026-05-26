@@ -25,40 +25,42 @@ require __DIR__ . '/auth.php';
 
 Route::middleware(['web'])->group(function () {
     Route::get('/top', [PostsController::class, 'index'])
-    ->name('top');
+        ->name('top');
     //投稿
     Route::post('/post/create', [PostsController::class, 'postCreate']);
     //編集
-    Route::post('/update',
-    [PostsController::class,'update']);
+    Route::post(
+        '/update',
+        [PostsController::class, 'update']
+    );
     //削除
-    Route::get('/post/{id}/delete',[PostsController::class, 'delete']);
+    Route::get('/post/{id}/delete', [PostsController::class, 'delete']);
 
     //プロフィール
     Route::get('/profile', [ProfileController::class, 'profile'])
-    ->name('profile');
+        ->name('profile');
     //プロフィール更新
     Route::post('/updateProfile', [ProfileController::class, 'updateProfile'])
-    ->name('updateProfile');
+        ->name('updateProfile');
 
     //検索
     Route::get('/search', [UsersController::class, 'search'])
-    ->name('search');
+        ->name('search');
 
-    Route::post('/search/follow', [UsersController::class, 'follow'])
-    ->name('follow');
+    Route::post('/search/follow/{id}', [UsersController::class, 'follow'])
+        ->name('follow');
 
     //class:index
     //フォロー
     Route::get('/follow-list', [FollowsController::class, 'FollowsController'])
-    ->name('follow-list');
+        ->name('follow-list');
 
     //フォロワー
     Route::get('/follower-list', [FollowsController::class, 'followerList'])
-    ->name('follower-list');
+        ->name('follower-list');
 
 });
 
-    //logout
-  Route::get('logout', [AuthenticatedSessionController::class, 'logout'])
-                ->name('logout');
+//logout
+Route::get('logout', [AuthenticatedSessionController::class, 'logout'])
+    ->name('logout');

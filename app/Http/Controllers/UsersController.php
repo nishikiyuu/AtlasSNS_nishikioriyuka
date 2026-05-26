@@ -11,38 +11,43 @@ use App\Models\Follow;
 
 class UsersController extends Controller
 {
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $keyword = $request->input('keyword');
-        if(!empty($keyword)){
-            $users = User::where('username','like', '%'.$keyword.'%')->get();
-        }else{
+        if (!empty($keyword)) {
+            $users = User::where('username', 'like', '%' . $keyword . '%')->get();
+        } else {
             $users = User::all();
         }
-        return view('users.search',compact('users','keyword'));
+        return view('users.search', compact('users', 'keyword'));
     }
 
-    public function follow(Request $request){
-        $following_id = $request->following_id;
-        $isfollow = Follow::where('id', Auth::user()->id)->where('following_id', $following_id)->first();
+    public function follow($id)
+    {
+        $following_id = Auth::user();
+        $isFollow = $following_id->isFollow($id);
 
-        if($isfollow){
-            $unfollow = Follow::where('id', Auth::user()->id)->where('following_id', $following_id);
-            $unfollow->delete();
-        }else{
-            $follow = new follow();
-            $follow->id = Auth::user()->id;
-            $follow->following_id = $following_id;
-            $follow->save();
+        if (!$isFollow) {
+            $following_id->follow($id);
+            //     $un_follow = Follow::where('id', Auth::user()->id)->where('following_id', $following_id);
+            //     $un_follow->delete();
+            // } else {
+            //     $follow = new follow();
+            //     $follow->id = Auth::user()->id;
+            //     $follow->following_id = $following_id;
+            //     $follow->save();
         }
 
         return back();
     }
 
-    public function user(){
+    public function user()
+    {
         return $this->hasMany(User::class);
     }
+
     public function __construct()
     {
-       $this->middleware('auth');
+        $this->middleware('auth');
     }
 }

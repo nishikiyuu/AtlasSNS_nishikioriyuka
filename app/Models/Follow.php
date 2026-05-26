@@ -4,12 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Follow extends Model
 {
     use HasFactory;
-    public function users()
-    {
-        return $this->belongsToMany(User::class,'follows','following_id','followed_id');
-    }
+
+    protected $fillable =
+    [
+        'id',
+        'following_id',
+        'followed_id'
+    ];
+
 }
