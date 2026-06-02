@@ -24,20 +24,13 @@ class UsersController extends Controller
 
     public function follow($id)
     {
-        $following_id = Auth::user();
-        $isFollow = $following_id->isFollow($id);
+        Auth::user()->follow($id);
+        return back();
+    }
 
-        if (!$isFollow) {
-            $following_id->follow($id);
-            //     $un_follow = Follow::where('id', Auth::user()->id)->where('following_id', $following_id);
-            //     $un_follow->delete();
-            // } else {
-            //     $follow = new follow();
-            //     $follow->id = Auth::user()->id;
-            //     $follow->following_id = $following_id;
-            //     $follow->save();
-        }
-
+    public function unfollow($id)
+    {
+        Auth::user()->unfollow($id);
         return back();
     }
 

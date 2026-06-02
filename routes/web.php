@@ -50,6 +50,9 @@ Route::middleware(['web'])->group(function () {
     Route::post('/search/follow/{id}', [UsersController::class, 'follow'])
         ->name('follow');
 
+    Route::post('/search/unfollow/{id}', [UsersController::class, 'unfollow'])
+        ->name('unfollow');
+
     //class:index
     //フォロー
     Route::get('/follow-list', [FollowsController::class, 'FollowsController'])

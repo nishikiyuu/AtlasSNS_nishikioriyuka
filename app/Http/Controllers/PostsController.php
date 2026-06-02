@@ -14,23 +14,27 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $posts = Post::with('user')->get();
+        // $posts = Post::with('user')->get();
+        $posts = Post::query()->whereIn('id', Auth::user()->follows()->pluck('followed_id'))->orWhere('id', Auth::user()->id)->latest()->get();
+
         return view('posts.index', compact('posts'));
     }
 
-     public function postCreate(Request $request){
+    public function postCreate(Request $request)
+    {
         $request->validate([
             'post' => 'required|max:150'
         ]);
 
         $user_id = Auth::user()->id;
-         //DD($user_id);
+        //DD($user_id);
         $post = $request->input('post');
         //$post = $request->input('user_id');
 
         Post::create([
-                'post' => $post,
-                'user_id' => $user_id]);
+            'post' => $post,
+            'user_id' => $user_id
+        ]);
         return back();
     }
 
@@ -52,12 +56,13 @@ class PostsController extends Controller
         return redirect('/top');
     }
 
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
     public function __construct()
     {
-       $this->middleware('auth');
+        $this->middleware('auth');
     }
 }

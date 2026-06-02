@@ -31,15 +31,15 @@
           @csrf
           <!--<input name="following_id" type="hidden" value="{{ $user->id }}">-->
 
-          @if($user->isFollow())
-            <form action="{{ route('follow', ['id' => $user->id]) }}" method="post">
-              @csrf
-              <button type="submit" class="btn btn-danger">フォロー解除</button>
-            </form>
-          @else
+          @if(!$user->isFollow())
             <form action="{{ route('follow', ['id' => $user->id]) }}" method="post">
               @csrf
               <button type="submit" class="btn btn-info">フォローする</button>
+            </form>
+          @else
+            <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="post">
+              @csrf
+              <button type="submit" class="btn btn-danger">フォロー解除</button>
             </form>
           @endif
         </div>
