@@ -19,30 +19,32 @@
 
     <div class="search-result">
       @foreach($users as $user)
-        <div class="search-group">
-          @if(!empty(Auth::user()->icon_image))
-            <figure><img src="{{asset('storage/images/' . $user->icon_image)}}"></figure>
-          @else
-            <figure><img src="{{asset('images/icon1.png')}}"></figure>
-          @endif
-          <div class="search-user">
-            <div>{{ $user->username }}</div>
-          </div>
-          @csrf
-          <!--<input name="following_id" type="hidden" value="{{ $user->id }}">-->
+        @if(Auth::user()->id !== $user->id)
+          <div class="search-group">
+            @if(!empty(Auth::user()->icon_image))
+              <figure><img src="{{asset('storage/images/' . $user->icon_image)}}"></figure>
+            @else
+              <figure><img src="{{asset('images/icon1.png')}}"></figure>
+            @endif
+            <div class="search-user">
+              <div>{{ $user->username }}</div>
+            </div>
+            @csrf
+            <!--<input name="following_id" type="hidden" value="{{ $user->id }}">-->
 
-          @if(!$user->isFollow())
-            <form action="{{ route('follow', ['id' => $user->id]) }}" method="post">
-              @csrf
-              <button type="submit" class="btn btn-info">フォローする</button>
-            </form>
-          @else
-            <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="post">
-              @csrf
-              <button type="submit" class="btn btn-danger">フォロー解除</button>
-            </form>
-          @endif
-        </div>
+            @if(!$user->isFollow())
+              <form action="{{ route('follow', ['id' => $user->id]) }}" method="post">
+                @csrf
+                <button type="submit" class="btn btn-info">フォローする</button>
+              </form>
+            @else
+              <form action="{{ route('unfollow', ['id' => $user->id]) }}" method="post">
+                @csrf
+                <button type="submit" class="btn btn-danger">フォロー解除</button>
+              </form>
+            @endif
+          </div>
+        @endif
       @endforeach
     </div>
   </div>

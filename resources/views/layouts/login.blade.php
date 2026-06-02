@@ -39,14 +39,14 @@
         <p>{{ Auth::user()->username }}さんの</p>
         <div class="follow-count">
           <p>フォロー数</p>
-          <p>{{ $follow_count }}名</p>
+          <p>○○名</p>
         </div>
         <div class="btn-follow">
           <button class="btn btn-primary"><a href="{{route('follow-list')}}">フォローリスト</a></button>
         </div>
         <div class="follower-count">
           <p>フォロワー数</p>
-          <p>{{ $follower_count }}名</p>
+          <p>○○名</p>
         </div>
 
         <div class="btn-follower">
