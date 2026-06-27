@@ -14,7 +14,6 @@ class PostsController extends Controller
 {
     public function index()
     {
-        // $posts = Post::with('user')->get();
         $posts = Post::query()->whereIn('user_id', Auth::user()->following()->pluck('followed_id'))->orWhere('user_id', Auth::user()->id)->latest()->get();
 
         return view('posts.index', compact('posts'));
@@ -51,7 +50,8 @@ class PostsController extends Controller
 
     public function delete($id)
     {
-        $id = Auth::id();
+        // $id = Auth::id();
+        // dd($id, Post::where('id', $id)->first());
         Post::where('id', $id)->delete();
         return redirect('/top');
     }

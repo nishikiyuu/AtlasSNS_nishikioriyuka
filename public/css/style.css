@@ -2,7 +2,9 @@
 
 html {}
 
-body {}
+body {
+    font-family: sans-serif;
+}
 
 /* header */
 header {
@@ -487,4 +489,40 @@ input[type="file"] {
 
 .btn-update button {
     width: 130px;
+}
+
+/* follow */
+.follow_content img {
+    width: 55px;
+    height: 55px;
+    border-radius: 90px;
+}
+
+.follow_group {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 150px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1rem solid;
+    border-bottom-color: lightgray;
+}
+
+.follow_block {
+    display: flex;
+    width: 550px;
+    height: 100%;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.follow_text {
+    font-size: 24px;
+    font-family: sans-serif;
+    letter-spacing: -0.1em;
+    color: #292524;
+    padding-top: 15px;
+    padding-left: 10%;
 }

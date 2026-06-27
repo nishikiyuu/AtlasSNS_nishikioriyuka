@@ -1,64 +1,65 @@
 <x-login-layout>
 
-{!! Form::open(['url' => '/post/create']) !!}
-<div class="post-content">
-  <div class="icon-post">
-      <img src="{{asset('storage/images/'.Auth::user()->icon_image)}}">
-  </div>
-  <div class="text-post">
-  {{ Form::textarea('post',null,['class' => 'form-control', 'placeholder' => '投稿内容を入力してください', 'rows' => '5']) }}
-  </div>
-
-  <div class="btn-post">
-    <input type="image" src="{{asset('/images/post.png')}}">
-  </div>
-</div>
-{!! Form::close() !!}
-
-
-<!--投稿表示-->
-<div>
-  @foreach($posts as $post)
-  <ul>
-    <li class="post-block">
-      <div class="post-detail">
-        <figure><img src="{{asset('storage/images/'.$post->user->icon_image)}}"></figure>
-        <div class="post-group">
-          <div class="post-name">{{$post->user->username}}</div>
-          <div class="post-word">{{$post->post}}</div>
-        </div>
-        <div class="post-time">{{$post->created_at}}</div>
-      </div>
-
-      <div class="btn-detail">
-        @if (Auth::id() == $post->user_id)
-          <div class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}">
-            <img src="./images/edit.png" alt="編集">
-          </div>
-          <a class="btn-delete" href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除しますか？')">
-            <img src="{{asset('/images/trash.png')}}">
-          </a>
-        @endif
-      </div>
-    </li>
-  </ul>
-  @endforeach</div>
-
-<!-- モーダルの中身 -->
-    <div class="modal js-modal">
-        <div class="modal__bg js-modal-close"></div>
-        <div class="modal__content">
-           <form action="/update" method="post">
-              <div class="text-modal">
-                <textarea name="up_post" class="modal_post"></textarea>
-              </div>
-                <input type="hidden" name="id" class="modal_id" value="">
-              <div class="btn-modal">
-                <input type="image" src="{{asset('./images/edit.png')}}">
-              </div>
-                {{ csrf_field() }}
-           </form>
-           <a class="js-modal-close" href=""></a>
-        </div>
+  {!! Form::open(['url' => '/post/create']) !!}
+  <div class="post-content">
+    <div class="icon-post">
+      <img src="{{asset('storage/images/' . Auth::user()->icon_image)}}">
     </div>
+    <div class="text-post">
+      {{ Form::textarea('post', null, ['class' => 'form-control', 'placeholder' => '投稿内容を入力してください', 'rows' => '5']) }}
+    </div>
+
+    <div class="btn-post">
+      <input type="image" src="{{asset('/images/post.png')}}">
+    </div>
+  </div>
+  {!! Form::close() !!}
+
+
+  <!--投稿表示-->
+  <div>
+    @foreach($posts as $post)
+      <ul>
+        <li class="post-block">
+          <div class="post-detail">
+            <figure><img src="{{asset('storage/images/' . $post->user->icon_image)}}"></figure>
+            <div class="post-group">
+              <div class="post-name">{{$post->user->username}}</div>
+              <div class="post-word">{{$post->post}}</div>
+            </div>
+            <div class="post-time">{{$post->created_at}}</div>
+          </div>
+
+          <div class="btn-detail">
+            @if (Auth::id() == $post->user_id)
+              <div class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}">
+                <img src="./images/edit.png" alt="編集">
+              </div>
+              <a class="btn-delete" href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除しますか？')">
+                <img src="{{asset('/images/trash.png')}}">
+              </a>
+            @endif
+          </div>
+        </li>
+      </ul>
+    @endforeach
+  </div>
+
+  <!-- モーダルの中身 -->
+  <div class="modal js-modal">
+    <div class="modal__bg js-modal-close"></div>
+    <div class="modal__content">
+      <form action="/update" method="post">
+        <div class="text-modal">
+          <textarea name="up_post" class="modal_post"></textarea>
+        </div>
+        <input type="hidden" name="id" class="modal_id" value="">
+        <div class="btn-modal">
+          <input type="image" src="{{asset('./images/edit.png')}}">
+        </div>
+        {{ csrf_field() }}
+      </form>
+      <a class="js-modal-close" href=""></a>
+    </div>
+  </div>
 </x-login-layout>

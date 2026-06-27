@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 
+
 class Follow extends Model
 {
     use HasFactory;
@@ -17,14 +18,14 @@ class Follow extends Model
             'followed_id'
         ];
 
-    public function FollowCount($user_id)
+    public function FollowCount(User $user)
     {
-        return $this->where('following_id', $user_id)->count();
+        return $this->where('following_id', $user->id)->count();
     }
 
-    public function FollowerCount($user_id)
+    public function FollowerCount(User $user)
     {
-        return $this->where('followed_id', $user_id)->count();
+        return $this->where('followed_id', $user->id)->count();
     }
 
 }
