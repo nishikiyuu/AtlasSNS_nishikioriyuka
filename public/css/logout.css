@@ -105,7 +105,7 @@ input {
     width: auto;
 }
 
-.register_content input {}
+
 
 .register-btn {
     margin-bottom: 25px;
@@ -114,4 +114,40 @@ input {
 
 .login_return {
     text-align: center;
+}
+
+/* 新規登録後の表示画面(added) */
+.added_content {
+    width: 340px;
+    height: 320px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: rgba(140, 140, 140, 0.5);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.added_group {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+
+}
+
+.added_comment {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.added_btn {
+    margin-bottom: 30px;
+    text-align: center;
+
+}
+
+.added_btn a {
+    width: 135px;
+    height: 40px;
 }
