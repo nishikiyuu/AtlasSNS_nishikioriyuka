@@ -62,6 +62,8 @@ Route::middleware(['web'])->group(function () {
     Route::get('/follower-list', [FollowsController::class, 'followerList'])
         ->name('follower-list');
 
+    Route::get('/followingProfile/{id}', [ProfileController::class, 'followingProfile'])
+        ->name('followingProfile');
 });
 
 //logout

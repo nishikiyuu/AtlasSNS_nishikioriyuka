@@ -23,6 +23,7 @@ class FollowsController extends Controller
         $followers = Auth::user()->followed()->get();
         return view('follows.followerList', compact('followers'));
     }
+
     public function __construct()
     {
         $this->middleware('auth');

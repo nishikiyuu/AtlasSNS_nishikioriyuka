@@ -93,5 +93,4 @@ class User extends Authenticatable
         return $this->following()->detach($user_id);
     }
 
-
 }

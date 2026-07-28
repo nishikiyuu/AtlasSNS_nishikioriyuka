@@ -492,13 +492,13 @@ input[type="file"] {
 }
 
 /* follow */
-.follow_content img {
+.follow_container img {
     width: 55px;
     height: 55px;
     border-radius: 90px;
 }
 
-.follow_group {
+.follow_content {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -525,4 +525,85 @@ input[type="file"] {
     color: #292524;
     padding-top: 15px;
     padding-left: 10%;
+}
+
+.follow_list {
+    display: flex;
+    padding-top: 30px;
+    padding-right: 10%;
+    padding-left: 10%;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #000;
+}
+
+.follow_image {
+    cursor: pointer;
+}
+
+.follow_group {
+    width: 500px;
+    margin-left: 30px;
+}
+
+/* 他ユーザーの情報(followingProfile) */
+.following_container img {
+    width: 55px;
+    height: 55px;
+    border-radius: 90px;
+}
+
+.following_content {
+    width: 100%;
+    height: 175px;
+    display: flex;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1rem solid;
+    border-bottom-color: lightgray;
+    font-size: 2.25rem;
+}
+
+.following_group {
+    width: 700px;
+    height: 100%;
+    margin-left: 10px;
+}
+
+.following_image {
+    margin-left: 120px;
+    padding-top: 25px
+}
+
+.following_name {
+    display: flex;
+    margin-top: 25px;
+    padding-bottom: 15px;
+    font-size: 20px;
+}
+
+.following_name p {
+    width: 100px;
+    height: 30px;
+    margin-right: 100px;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.following_bio {
+    display: flex;
+    font-size: 20px;
+}
+
+.following_bio p {
+    width: 100px;
+    height: 30px;
+    margin-right: 100px;
+    text-align: justify;
+    text-align-last: justify;
+}
+
+.btn_following {
+    margin: 100px 20px 0 auto;
+
 }

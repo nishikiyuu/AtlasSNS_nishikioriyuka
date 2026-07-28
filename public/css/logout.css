@@ -11,7 +11,7 @@ body {
 
 /*login*/
 .login-image {
-    padding-top: 10%;
+    padding-top: 8%;
     width: auto;
     text-align: center;
 }
@@ -47,11 +47,11 @@ body {
 .login-group {
     display: flex;
     flex-direction: column;
-    width: auto;
 }
 
 input {
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-bottom: 20px;
     border-radius: 10px;
     border-width: thin;
@@ -73,10 +73,45 @@ input {
     font-size: medium;
 }
 
-.register-content {
+.register-return {
     text-align: center;
 }
 
-.register-content a {
+.register-return a {
     text-decoration: underline;
+}
+
+/* 新規登録register */
+.register_container {
+    width: 340px;
+    height: 550px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: rgba(140, 140, 140, 0.5);
+    color: #fff;
+    border-radius: 10px;
+}
+
+.register_container p {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.register_content {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+.register_content input {}
+
+.register-btn {
+    margin-bottom: 25px;
+    text-align: end;
+}
+
+.login_return {
+    text-align: center;
 }

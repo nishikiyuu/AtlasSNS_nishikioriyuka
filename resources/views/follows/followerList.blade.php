@@ -1,8 +1,8 @@
 <x-login-layout>
   {!! Form::open(['url' => '/follower-list']) !!}
 
-  <div class="follow_content">
-    <div class="follow_group">
+  <div class="follow_container">
+    <div class="follow_content">
       <p class="follow_text">フォロワーリスト</p>
       <div class="follow_block">
         @foreach($followers as $follower)
@@ -10,7 +10,7 @@
 
             <ul>
               <li class="follow_image">
-                <figure><img src="{{asset('storage/images/' . $follower->icon_image)}}"></figure>
+                <a href="{{ route('followingProfile', $follower->id) }}"><img src="{{asset('storage/images/' . $follower->icon_image)}}"></a>
               </li>
             </ul>
           @endif
@@ -18,13 +18,12 @@
       </div>
     </div>
 
-    @foreach($followers as $follower)
-      @if(Auth::user()->id !== $follower->id)
-        @foreach($follower->post as $post)
-          <ul>
-            <li class="follow_list">
-              <img src="{{asset('storage/images/' . $follower->icon_image)}}">
-
+    @if(Auth::user()->id !== $follower->id)
+      @foreach($follower->post as $post)
+        <ul>
+          <li class="follow_list">
+            <img src="{{asset('storage/images/' . $follower->icon_image)}}">
+            <div class="follow_group">
               <div class="post-name">
                 {{$follower->username}}
               </div>
@@ -32,13 +31,12 @@
               <div class="post-word">
                 {{ $post->post }}
               </div>
-
-              <div class="post-time">{{$follower->created_at}}</div>
-            </li>
-          </ul>
-        @endforeach
-      @endif
-    @endforeach
+            </div>
+            <div class="post-time">{{$follower->created_at}}</div>
+          </li>
+        </ul>
+      @endforeach
+    @endif
   </div>
   {!! Form::close() !!}
 </x-login-layout>

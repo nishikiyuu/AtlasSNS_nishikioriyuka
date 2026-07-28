@@ -22,11 +22,18 @@ class ProfileController extends Controller
         return view('profiles.profile', compact('user'));
     }
 
+    public function followingProfile($id)
+    {
+        $users = User::with('post')->where('id', $id)->firstOrFail();
+
+        return view('profiles.followingProfile', compact('users'));
+    }
+
     public function updateProfile(Request $request)
     {
         $request->validate([
             'username' => 'required|min: 2|max: 12',
-            'email' => 'required|min: 5|max: 40|email|unique:users,email,' .Auth::id().',id',
+            'email' => 'required|min: 5|max: 40|email|unique:users,email,' . Auth::id() . ',id',
             'password' => 'required|alpha_num|min: 8|max: 20|confirmed',
             'password_confirmation' => 'required|alpha_num|min: 8|max: 20',
             'bio' => 'max: 150',
@@ -40,8 +47,8 @@ class ProfileController extends Controller
         $up_bio = $request->input('bio');
 
         $up_icon = null;
-       if($request->hasFile('icon-image')) {
-         $up_icon = $request->file('icon-image')->store('public/images/');
+        if ($request->hasFile('icon-image')) {
+            $up_icon = $request->file('icon-image')->store('public/images/');
         }
 
 
@@ -51,7 +58,7 @@ class ProfileController extends Controller
             'email' => $up_email,
             'password' => Hash::make($up_password),
             'bio' => $up_bio,
-            'icon_image' => $up_icon ?basename($up_icon):User::find($id)->icon_image
+            'icon_image' => $up_icon ? basename($up_icon) : User::find($id)->icon_image
         ]);
 
 
@@ -60,6 +67,6 @@ class ProfileController extends Controller
     }
     public function __construct()
     {
-       $this->middleware('auth');
+        $this->middleware('auth');
     }
 }
