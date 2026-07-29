@@ -24,7 +24,7 @@ h1 {
     margin: 0;
 }
 
-.atlas-icon img {
+.atlas_icon img {
     width: 150px;
     height: 50px;
 }
@@ -40,7 +40,7 @@ h1 {
     flex: 0 0 80%;
 }
 
-#side-bar {
+#side_bar {
     flex: 0 0 19%;
     border-left: 2px solid #727272;
     width: 20%;
@@ -48,44 +48,44 @@ h1 {
     float: right;
 }
 
-.side-search {
+.side_search {
     border-top: 2px solid #D3D3D3;
     padding: 20%
 }
 
-.side-search button {
+.side_search button {
     width: 150px;
     font-size: medium;
 }
 
-.follow-count {
+.follow_count {
     display: flex;
 }
 
-.btn-follow {
+.btn_follow {
     width: 100%;
     text-align: right;
     padding-right: 10px;
     margin-bottom: 10%;
 }
 
-.btn-follow button {
+.btn_follow button {
     width: 130px;
     font-size: small;
 }
 
-.follower-count {
+.follower_count {
     display: flex;
 }
 
-.btn-follower {
+.btn_follower {
     width: 100%;
     text-align: right;
     padding-right: 10px;
     margin-bottom: 10%;
 }
 
-.btn-follower button {
+.btn_follower button {
     width: 130px;
     font-size: small;
 
@@ -99,12 +99,12 @@ h1 {
     height: 100%;
 }
 
-.accordion-container {
+.accordion_container {
     width: 230px;
     height: 100%;
 }
 
-.accordion-title {
+.accordion_title {
     height: 100%;
     color: #fff;
     cursor: pointer;
@@ -114,7 +114,7 @@ h1 {
     ;
 }
 
-.accordion-title::after {
+.accordion_title::after {
     border-right: solid 2px #fff;
     border-top: solid 2px #fff;
     content: "";
@@ -127,12 +127,12 @@ h1 {
     width: 15px;
 }
 
-.accordion-title.open::after {
+.accordion_title.open::after {
     top: 45%;
     transform: scale(-1) rotate(135deg);
 }
 
-.accordion-content {
+.accordion_content {
     display: none;
     position: absolute;
     width: 305px;
@@ -144,62 +144,58 @@ h1 {
     background-color: #fff;
 }
 
-.accordion-content>ul {
+.accordion_content>ul {
     text-align: center;
 }
 
-.accordion-content li {
+.accordion_content li {
     padding: 20px 0;
     border-bottom: 1px solid #000;
 }
 
-.accordion-content li:hover {
+.accordion_content li:hover {
     background-color: #001f5b;
 }
 
-.accordion-content a {
+.accordion_content a {
     width: 100%;
     height: 100%;
     font-size: x-large;
     color: grey;
 }
 
-.accordion-content a:hover {
+.accordion_content a:hover {
     color: #fff;
 }
 
-.icon-top {
+.icon_top {
     padding: 5%;
 }
 
 /*accordion横のicon*/
-.icon-top img {
+.icon_top img {
     width: 50px;
     height: 50px;
     border-radius: 90px;
 }
 
 /* top (投稿)*/
-.post-content {
+.post_content {
     width: 100%;
     height: 175px;
     display: flex;
-    border-top: none;
-    border-left: none;
-    border-right: none;
     border-bottom: 1rem solid;
     border-bottom-color: lightgray;
-    justify-content: space-between;
 
 }
 
 /*テキストエリア*/
-.text-post {
+.text_post {
     width: 100%;
     height: 100%;
 }
 
-.form-control {
+.form_control {
     resize: none;
     width: 450px;
     height: 140px;
@@ -210,71 +206,69 @@ h1 {
 }
 
 /*投稿送信ボタン*/
-.btn-post {
+.btn_post {
     margin-top: 100px;
     margin-right: 150px;
 }
 
-.btn-post input {
+.btn_post input {
     width: 45px;
     height: 45px;
 }
 
 /*投稿者(ログイン者)アイコン*/
-.icon-post {
+.icon_post {
     margin-top: 20px;
     margin-left: 30px;
 }
 
-.icon-post img {
+.icon_post img {
     width: 45px;
     height: 45px;
     border-radius: 90px;
 }
 
 /* post block(投稿内容)*/
-.post-block {
-    list-style: none;
+.post_block {
     padding-top: 15px;
     padding-right: 10%;
     padding-left: 15%;
     border-bottom: 1px solid #000;
-    flex-direction: column;
 }
 
-.post-block img {
+.post_block img {
     width: 50px;
     height: 50px;
     border-radius: 90px;
 }
 
-.post-detail {
+.post_detail {
     display: flex;
     width: 100%;
     height: auto;
 }
 
-.post-group {
+.post_group {
     width: 500px;
     margin-left: 10px;
 }
 
-.post-name {
+.post_name {
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.post-word {
+.post_word {
     overflow-wrap: break-word;
 }
 
 /*投稿時間の表示位置*/
-.post-time {
+.post_time {
     margin: 0 0 0 auto;
 }
 
 /*編集・削除ボタンの親要素*/
-.btn-detail {
+.btn_detail {
     display: flex;
     width: 100%;
     height: 60px;
@@ -288,7 +282,7 @@ h1 {
 }
 
 /*投稿削除ボタン*/
-.btn-delete input {
+.btn_delete input {
     width: 50px;
     height: 50px;
 }
@@ -326,24 +320,22 @@ h1 {
     transform: translate(-50%, -50%);
 }
 
-.modal__content form {}
-
-.text-modal textarea {
+.text_modal textarea {
     width: 100%;
     height: 190px;
 }
 
-.btn-modal {
+.btn_modal {
     text-align: center;
 }
 
-.btn-modal input {
+.btn_modal input {
     width: 50px;
     height: 50px;
 }
 
 /*search*/
-.search-content {
+.search_content {
     display: flex;
     width: 100%;
     height: 150px;
@@ -362,27 +354,27 @@ h1 {
     font-size: medium;
 }
 
-.btn-search {
+.btn_search {
     margin-left: 2%;
     align-content: center;
 }
 
-.btn-search input {
+.btn_search input {
     width: 45px;
     height: 45px;
 }
 
-.search-word {
+.search_word {
     width: 30%;
     padding-top: 50px;
     margin-left: 20%;
 }
 
-.search-word p {
+.search_word p {
     font-size: 23px;
 }
 
-.search-result {
+.search_result {
     width: 100%;
     margin-top: 30px;
     padding-left: 30%;
@@ -390,69 +382,69 @@ h1 {
 
 }
 
-.search-group {
+.search-_group {
     display: flex;
     justify-content: space-between;
     margin-bottom: 35px;
     align-items: center;
 }
 
-.search-group img {
+.search_group img {
     width: 50px;
     height: 50px;
     border-radius: 90px;
 }
 
-.search-user {
+.search_user {
     width: 250px;
     font-size: large;
     writing-mode: horizontal-tb;
 }
 
 /*profile*/
-.profile-container {
+.profile_container {
     display: flex;
     width: 100%;
 }
 
-.icon-profile {
+.icon_profile {
     width: 50px;
     height: auto;
     padding-top: 5%;
     margin-left: 20%;
 }
 
-.icon-profile img {
+.icon_profile img {
     width: 50px;
     height: 50px;
     border-radius: 90px;
 }
 
-.profile-content {
+.profile_content {
     width: 100%;
     height: auto;
     padding-top: 5%;
     padding-left: 5%;
 }
 
-.profile-content label:not(.icon-label) {
+.profile_content label:not(.icon-label) {
     width: 30%;
     padding-bottom: 5%;
     font-weight: normal;
     font-size: 20px;
 }
 
-.profile-content input {
+.profile_content input {
     width: 300px;
     height: 35px;
     border: solid 2px #808080;
 }
 
-.profile-file {
+.profile_file {
     display: flex;
 }
 
-.icon-label {
+.icon_label {
     width: 300px;
     height: 80px;
     color: #fff;
@@ -464,11 +456,11 @@ h1 {
     cursor: pointer;
 }
 
-.icon-label input {
+.icon_label input {
     font-size: small;
 }
 
-.icon-label p {
+.icon_label p {
     width: 50%;
     color: #d3d3d3;
     background-color: #f5f5f5;
@@ -479,7 +471,7 @@ input[type="file"] {
     display: none;
 }
 
-.btn-update {
+.btn_update {
     width: auto;
     height: 20%;
     padding-top: 10%;
@@ -487,7 +479,7 @@ input[type="file"] {
 
 }
 
-.btn-update button {
+.btn_update button {
     width: 130px;
 }
 

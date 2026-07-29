@@ -5,29 +5,28 @@ html {}
 body {
     height: 100vh;
     background: #186AC9;
-    background-image: linear-gradient(0deg, #FFD400 40%, #186AC9 60%);
+    background-image: linear-gradient(0deg, #FFD400 15%, #186AC9 80%);
 }
 
-
 /*login*/
-.login-image {
+.login_image {
     padding-top: 8%;
     width: auto;
     text-align: center;
 }
 
-.login-header img {
+.login_header img {
     width: 150px;
 }
 
-.login-header p {
+.login_header p {
     font-size: 32px;
     text-align: center;
     font-weight: 900;
     color: #fff;
 }
 
-.login-content {
+.login_content {
     width: 340px;
     height: 400px;
     margin: 0 auto;
@@ -37,14 +36,14 @@ body {
     border-radius: 10px;
 }
 
-.login-content p {
+.login_content p {
     text-align: center;
     font-size: 24px;
     margin-top: 20px;
     margin-bottom: 30px;
 }
 
-.login-group {
+.login_group {
     display: flex;
     flex-direction: column;
 }
@@ -52,7 +51,7 @@ body {
 input {
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     border-radius: 10px;
     border-width: thin;
     border-color: lightgray;
@@ -61,7 +60,7 @@ input {
 }
 
 /* ログインボタン */
-.login-btn {
+.login_btn {
     width: auto;
     margin-bottom: 30px;
     text-align: end;
@@ -73,11 +72,11 @@ input {
     font-size: medium;
 }
 
-.register-return {
+.register_return {
     text-align: center;
 }
 
-.register-return a {
+.register_return a {
     text-decoration: underline;
 }
 
@@ -105,9 +104,7 @@ input {
     width: auto;
 }
 
-
-
-.register-btn {
+.register_btn {
     margin-bottom: 25px;
     text-align: end;
 }

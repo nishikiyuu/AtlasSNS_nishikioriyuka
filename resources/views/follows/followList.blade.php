@@ -23,15 +23,15 @@
           <li class="follow_list">
             <img src="{{asset('storage/images/' . $following->icon_image)}}">
             <div class="follow_group">
-              <div class="post-name">
+              <div class="post_name">
                 {{$following->username}}
               </div>
 
-              <div class="post-word">
+              <div class="post_word">
                 {{ $post->post }}
               </div>
             </div>
-            <div class="post-time">{{$following->created_at}}</div>
+            <div class="post_time">{{$following->created_at}}</div>
           </li>
         </ul>
       @endforeach
