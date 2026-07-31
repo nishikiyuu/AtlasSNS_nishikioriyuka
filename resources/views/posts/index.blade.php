@@ -22,7 +22,9 @@
       <ul>
         <li class="post_block">
           <div class="post_detail">
-            <figure><img src="{{asset('storage/images/' . $post->user->icon_image)}}"></figure>
+            <div class="post_image">
+              <img src="{{asset('storage/images/' . $post->user->icon_image)}}">
+            </div>
             <div class="post_group">
               <div class="post_name">{{$post->user->username}}</div>
               <div class="post_word">{{$post->post}}</div>
@@ -35,9 +37,11 @@
               <div class="js-modal-open" href="" post="{{ $post->post }}" post_id="{{ $post->id }}">
                 <img src="./images/edit.png" alt="編集">
               </div>
-              <a class="btn_delete" href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除しますか？')">
-                <img src="{{asset('/images/trash.png')}}">
-              </a>
+              <div class="btn_delete">
+                <a href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除しますか？')">
+                  <img src="{{asset('/images/trash.png')}}" onmouseover="this.src='/images/trash-h.png'" onmouseout="this.src='/images/trash.png'">
+                </a>
+              </div>
             @endif
           </div>
         </li>

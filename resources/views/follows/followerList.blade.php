@@ -27,12 +27,12 @@
               <div class="post_name">
                 {{$follower->username}}
               </div>
-
               <div class="post_word">
                 {{ $post->post }}
               </div>
             </div>
-            <div class="post_time">{{$follower->created_at}}</div>
+            <div class="post_time">{{$follower->created_at}}
+            </div>
           </li>
         </ul>
       @endforeach
