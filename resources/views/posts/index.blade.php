@@ -7,8 +7,11 @@
     </div>
     <div class="text_post">
       {{ Form::textarea('post', null, ['class' => 'form_control', 'placeholder' => '投稿内容を入力してください', 'rows' => '5']) }}
-    </div>
+      @error('post')
+        <div class="post_error" style="color: red;">{{ $message }}</div>
+      @enderror
 
+    </div>
     <div class="btn_post">
       <input type="image" src="{{asset('/images/post.png')}}">
     </div>
@@ -56,6 +59,9 @@
       <form action="/update" method="post">
         <div class="text_modal">
           <textarea name="up_post" class="modal_post"></textarea>
+          @error('up_post')
+            <div class="update_error" style="color: red;">{{ $message }}</div>
+          @enderror
         </div>
         <input type="hidden" name="id" class="modal_id" value="">
         <div class="btn_modal">

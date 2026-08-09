@@ -187,7 +187,7 @@ h1 {
 /* top (投稿)*/
 .post_content {
     width: 100%;
-    height: 175px;
+    height: auto;
     display: flex;
     border-bottom: 1rem solid;
     border-bottom-color: lightgray;
@@ -318,7 +318,7 @@ h1 {
 
 .modal__content {
     width: 55%;
-    height: 300px;
+    height: auto;
     background: #fff;
     left: 50%;
     padding: 30px;
@@ -431,10 +431,14 @@ h1 {
 
 .profile_content label:not(.icon_label) {
     width: 30%;
-    padding-bottom: 5%;
     font-weight: normal;
     font-size: 20px;
 }
+
+.profile_content div:not(:first-child, .profile_error) {
+    margin-top: 25px;
+}
+
 
 .profile_content input {
     width: 300px;

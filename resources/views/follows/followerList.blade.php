@@ -7,7 +7,6 @@
       <div class="follow_block">
         @foreach($followers as $follower)
           @if(Auth::user()->id !== $follower->id)
-
             <ul>
               <li class="follow_image">
                 <a href="{{ route('followingProfile', $follower->id) }}"><img src="{{asset('storage/images/' . $follower->icon_image)}}"></a>

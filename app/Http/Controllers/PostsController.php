@@ -39,6 +39,10 @@ class PostsController extends Controller
 
     public function update(Request $request)
     {
+        $request->validate([
+            'up_post' => 'required|max:150'
+        ]);
+
         $user_id = Auth::id();
         $id = $request->input('id');
         $up_post = $request->input('up_post');

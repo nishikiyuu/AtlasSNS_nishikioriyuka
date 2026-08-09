@@ -4,31 +4,43 @@
     <div class="icon_profile">
       <img src="{{asset('storage/images/' . Auth::user()->icon_image)}}">
     </div>
-    @foreach ($errors->all() as $error)
-      <li>{{ $error }}</li>
-    @endforeach
 
     <div class="profile_content">
       <div>
         {{ Form::label('ユーザー名') }}
         {{ Form::text('username', $user->username, ['class' => 'input']) }}
       </div>
+      @error('username')
+        <div class="profile_error" style="color: red;">{{ $message }}</div>
+      @enderror
       <div>
         {{ Form::label('メールアドレス') }}
         {{ Form::email('email', $user->email, ['class' => 'input'])}}
       </div>
+      @error('email')
+        <div class="profile_error" style="color: red;">{{ $message }}</div>
+      @enderror
       <div>
         {{ Form::label('パスワード') }}
         {{ Form::password('password', ['class' => 'input']) }}
       </div>
+      @error('password')
+        <div class="profile_error" style="color: red;">{{ $message }}</div>
+      @enderror
       <div>
         {{ Form::label('パスワード確認') }}
         {{ Form::password('password_confirmation', ['class' => 'input']) }}
       </div>
+      @error('password_confirmation')
+        <div class="profile_error" style="color: red;">{{ $message }}</div>
+      @enderror
       <div>
         {{ Form::label('自己紹介') }}
         {{ Form::text('bio', $user->bio, ['class' => 'input']) }}
       </div>
+      @error('bio')
+        <div class="profile_error" style="color: red;">{{ $message }}</div>
+      @enderror
 
       <div class="profile_file">
         {{ Form::label('アイコン画像') }}
@@ -38,6 +50,9 @@
           {{ csrf_field() }}
         </label>
       </div>
+      @error('icon-image')
+        <div class="profile_error" style="color: red;">{{ $message }}</div>
+      @enderror
       <div class="btn_update">
         <button class="btn btn-danger">更新</button>
       </div>
