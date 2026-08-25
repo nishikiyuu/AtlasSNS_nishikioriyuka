@@ -17,25 +17,27 @@
       </div>
     </div>
 
-    @if(Auth::user()->id !== $following->id)
-      @foreach($following->post as $post)
-        <ul>
-          <li class="follow_list">
-            <img src="{{asset('storage/images/' . $following->icon_image)}}">
-            <div class="follow_group">
-              <div class="post_name">
-                {{$following->username}}
-              </div>
+    @foreach ($followings as $following)
+      @if(Auth::user()->id !== $following->id)
+        @foreach($following->post as $post)
+          <ul>
+            <li class="follow_list">
+              <img src="{{asset('storage/images/' . $following->icon_image)}}">
+              <div class="follow_group">
+                <div class="post_name">
+                  {{$following->username}}
+                </div>
 
-              <div class="post_word">
-                {{ $post->post }}
+                <div class="post_word">
+                  {{ $post->post }}
+                </div>
               </div>
-            </div>
-            <div class="post_time">{{$following->created_at}}</div>
-          </li>
-        </ul>
-      @endforeach
-    @endif
+              <div class="post_time">{{$following->created_at}}</div>
+            </li>
+          </ul>
+        @endforeach
+      @endif
+    @endforeach
   </div>
 
 

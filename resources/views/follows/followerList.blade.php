@@ -17,25 +17,27 @@
       </div>
     </div>
 
-    @if(Auth::user()->id !== $follower->id)
-      @foreach($follower->post as $post)
-        <ul>
-          <li class="follow_list">
-            <img src="{{asset('storage/images/' . $follower->icon_image)}}">
-            <div class="follow_group">
-              <div class="post_name">
-                {{$follower->username}}
+    @foreach($followers as $follower)
+      @if(Auth::user()->id !== $follower->id)
+        @foreach($follower->post as $post)
+          <ul>
+            <li class="follow_list">
+              <img src="{{asset('storage/images/' . $follower->icon_image)}}">
+              <div class="follow_group">
+                <div class="post_name">
+                  {{$follower->username}}
+                </div>
+                <div class="post_word">
+                  {{ $post->post }}
+                </div>
               </div>
-              <div class="post_word">
-                {{ $post->post }}
+              <div class="post_time">{{$follower->created_at}}
               </div>
-            </div>
-            <div class="post_time">{{$follower->created_at}}
-            </div>
-          </li>
-        </ul>
-      @endforeach
-    @endif
+            </li>
+          </ul>
+        @endforeach
+      @endif
+    @endforeach
   </div>
   {!! Form::close() !!}
 </x-login-layout>

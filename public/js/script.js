@@ -25,9 +25,9 @@ $(function () {
 
 $(function () {
   // タイトルをクリック
-  $(".js-accordion-title").on("click", function () {
+  $(".js-accordion-container").on("click", function () {
     // クリックした次の要素を開閉
-    $(this).next().slideToggle(200);
+    $(this).children(".accordion_content").slideToggle(200);
     // タイトルにopenクラスを付け外しして矢印の向きを変更
     $(this).toggleClass("open", 200);
   });
@@ -37,6 +37,6 @@ $(function () {
 $(function () {
   $('input[name="icon-image"]').on('change', function () {
     var file = $(this).prop('files')[0];
-    $('.icon-file').text(file.name);
+    $('.icon_file').text(file.name);
   });
 });

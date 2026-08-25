@@ -24,6 +24,10 @@ h1 {
     margin: 0;
 }
 
+.atlas_icon {
+    margin-left: 20px;
+}
+
 .atlas_icon img {
     width: 150px;
     height: 50px;
@@ -104,72 +108,81 @@ h1 {
     height: 100%;
 }
 
-.accordion_container {
-    width: 230px;
-    height: 100%;
-}
-
 .accordion_title {
+    width: 270px;
     height: 100%;
     color: #fff;
-    cursor: pointer;
     font-size: 20px;
-    padding: 12%;
-    position: relative;
-    ;
 }
 
-.accordion_title::after {
+.accordion_title p {
+    width: auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.accordion_container {
+    width: 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.accordion_container::after {
+    width: 15px;
+    height: 15px;
     border-right: solid 2px #fff;
     border-top: solid 2px #fff;
     content: "";
     display: block;
-    height: 15px;
-    position: absolute;
-    right: 25px;
-    top: 35%;
     transform: scale(1, 1) rotate(-225deg);
-    width: 15px;
+    overflow: hidden;
 }
 
-.accordion_title.open::after {
+.accordion_container.open::after {
     top: 45%;
     transform: scale(-1) rotate(135deg);
 }
 
 .accordion_content {
     display: none;
-    position: absolute;
-    width: 305px;
-    height: 240px;
+    position: fixed;
+    top: 78px;
+    right: 0;
     border-top: 2px solid #001f5b;
     border-bottom: 2px solid #001f5b;
     border-left: 2px solid #001f5b;
     border-right: 2px solid #001f5b;
     background-color: #fff;
+
 }
 
-.accordion_content>ul {
+.accordion_group {
+    width: 295px;
+    height: 225px;
     text-align: center;
 }
 
-.accordion_content li {
-    padding: 20px 0;
+.accordion_group li {
+    padding-top: 20px;
+    padding-bottom: 20px;
     border-bottom: 1px solid #000;
 }
 
-.accordion_content li:hover {
+.accordion_group li:hover {
     background-color: #001f5b;
 }
 
-.accordion_content a {
+.accordion_group a {
     width: 100%;
     height: 100%;
     font-size: x-large;
     color: grey;
 }
 
-.accordion_content a:hover {
+.accordion_group a:hover {
     color: #fff;
 }
 
